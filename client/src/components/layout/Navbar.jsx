@@ -67,8 +67,18 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu button (simplified for hackathon) */}
-          <div className="flex md:hidden items-center">
-             <Link to="/login" className="text-primary-600 font-medium">Login</Link>
+          <div className="flex md:hidden items-center gap-4">
+            {user ? (
+              <>
+                <Link to={user.role === 'admin' ? '/admin' : user.role === 'owner' ? '/owner' : '/tenant'} className="text-primary-600 font-medium text-sm">Dashboard</Link>
+                <button onClick={handleLogout} className="text-gray-500 font-medium text-sm">Logout</button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="text-gray-600 font-medium text-sm">Login</Link>
+                <Link to="/register" className="bg-primary-600 text-white px-3 py-1.5 rounded-md font-medium text-sm">Sign Up</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
