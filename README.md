@@ -1,8 +1,11 @@
 # 🏡 RentMate
 
-![RentMate Banner](https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop)
-
 **RentMate** is an advanced, full-stack MERN application designed to revolutionize the way people find rooms and flatmates. By leveraging AI-driven compatibility scoring, real-time messaging, and verified user profiles, RentMate eliminates the need for brokers and creates a seamless, secure ecosystem for both property owners and tenants.
+
+---
+
+## 📸 Screenshots
+*(Drag and drop your website screenshots here!)*
 
 ---
 
