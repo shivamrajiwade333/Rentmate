@@ -7,6 +7,9 @@
 ## 📸 Screenshots
 <img width="546" height="887" alt="Screenshot 2026-07-14 225210" src="https://github.com/user-attachments/assets/2e7eb129-acaf-4d02-a7b7-b8f12fcde750" />
 
+<img width="533" height="821" alt="Screenshot 2026-07-14 225326" src="https://github.com/user-attachments/assets/fbabba7a-c5d6-4621-ab40-443940b14141" />
+
+<img width="546" height="658" alt="Screenshot 2026-07-14 225341" src="https://github.com/user-attachments/assets/920c4f9e-9cf9-4e97-a1d9-bf87851de420" />
 
 ---
 
