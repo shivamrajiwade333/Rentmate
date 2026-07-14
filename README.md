@@ -1,62 +1,123 @@
-# RentMate
+# 🏡 RentMate
 
-RentMate is an AI-powered Rent and Flatmate Finder platform that matches tenants with optimal room listings using an advanced compatibility engine.
+![RentMate Banner](https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop)
 
-## Features
+**RentMate** is an advanced, full-stack MERN application designed to revolutionize the way people find rooms and flatmates. By leveraging AI-driven compatibility scoring, real-time messaging, and verified user profiles, RentMate eliminates the need for brokers and creates a seamless, secure ecosystem for both property owners and tenants.
 
-- **AI Compatibility Engine**: Leverages LLMs (Gemini, Groq, OpenAI) to score tenant profiles against listing details.
-- **Rule-Based Fallback**: Ensures uninterrupted service even if the AI provider goes down.
-- **Role-Based Access**: Specialized dashboards for Tenants, Owners, and Admins.
-- **Real-Time Chat**: Integrated Socket.IO chat unlocks only when an owner accepts a tenant's request.
-- **Notifications**: Email (SMTP/Resend) and in-app notifications for critical events.
+---
 
-## Tech Stack
+## 🚀 Live Demo
 
-- **Frontend**: React, Vite, Tailwind CSS, React Router, Zod, React Hook Form
-- **Backend**: Node.js, Express.js, Socket.IO, Mongoose, JWT Auth
-- **Database**: MongoDB Atlas
-- **Storage**: Cloudinary
-- **AI**: Gemini API / Rule-based Fallback
+- **Frontend:** [https://rentmate-one.vercel.app](https://rentmate-one.vercel.app)
+- **Backend API:** Hosted on Render (Node.js/Express)
 
-## Local Setup
+---
 
-### 1. Clone & Install
-\`\`\`bash
+## ✨ Key Features
+
+- **🤖 AI Compatibility Matching:** Utilizes LLMs (Groq API) to analyze tenant lifestyle preferences, habits, and budgets to generate an intelligent match score.
+- **💬 Real-Time Chat Engine:** Integrated Socket.IO for instant, secure communication between verified tenants and property owners.
+- **🏠 Dual Portals:** Distinct dashboards and workflows for **Tenants** (looking for rooms/flatmates) and **Owners** (managing property listings).
+- **🛡️ Secure Authentication:** JWT-based authentication with Role-Based Access Control (RBAC).
+- **📸 Cloud Media Management:** Seamless image uploading and optimization via Cloudinary.
+- **🔍 Advanced Filtering:** Dynamic search capabilities filtering by location, budget, room type, and lifestyle habits.
+
+---
+
+## 🏗️ System Architecture
+
+RentMate follows a robust Client-Server architecture utilizing the MERN stack.
+
+```mermaid
+graph TD
+    Client[Client Browser<br/>React + Vite + TailwindCSS]
+    
+    API[Backend API<br/>Node.js + Express]
+    Socket[WebSocket Server<br/>Socket.IO]
+    
+    DB[(MongoDB Atlas<br/>Database)]
+    Cloudinary[Cloudinary<br/>Image CDN]
+    LLM[Groq API<br/>AI Matching Engine]
+    
+    Client -- "REST API (HTTPS)" --> API
+    Client -- "Real-Time Chat (WSS)" <--> Socket
+    
+    API -- "Read/Write" --> DB
+    Socket -- "Session Data" --> DB
+    
+    API -- "Upload Images" --> Cloudinary
+    API -- "Calculate Compatibility" --> LLM
+```
+
+---
+
+## 💻 Tech Stack
+
+### Frontend
+- **Framework:** React 18 (via Vite)
+- **Styling:** TailwindCSS
+- **Routing:** React Router v6
+- **Icons:** Lucide React
+
+### Backend
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Real-Time:** Socket.IO
+- **Authentication:** JSON Web Tokens (JWT) & bcryptjs
+
+### Database & External Services
+- **Database:** MongoDB Atlas (Mongoose ODM)
+- **AI Engine:** Groq API (LLM-based compatibility scoring)
+- **Media Storage:** Cloudinary
+
+---
+
+## 🛠️ Local Development Setup
+
+To run RentMate locally, follow these steps:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/shivamrajiwade333/Rentmate.git
+cd Rentmate
+```
+
+### 2. Setup the Backend
+```bash
 cd server
 npm install
-cd ../client
-npm install
-\`\`\`
-
-### 2. Environment Variables
-Copy \`.env.example\` to \`.env\` in both \`server\` and \`client\` directories and fill in the required values (MongoDB URI, JWT secret, Cloudinary keys, Email keys, and LLM API key).
-
-### 3. Start Application
-**Server:**
-\`\`\`bash
-cd server
+```
+Create a `.env` file in the `server` directory with the following variables:
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=7d
+GROQ_API_KEY=your_groq_api_key
+CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```
+Start the server:
+```bash
 npm run dev
-\`\`\`
+```
 
-**Client:**
-\`\`\`bash
+### 3. Setup the Frontend
+Open a new terminal window:
+```bash
 cd client
+npm install
+```
+Start the Vite development server:
+```bash
 npm run dev
-\`\`\`
+```
 
-## Seed Data
-To seed initial demo accounts (Admin, Tenant, Owner):
-\`\`\`bash
-cd server
-node utils/seed.js
-\`\`\`
-*(Passwords are defaulted to \`password123\`)*
+---
 
-## Architecture
+## 👨‍💻 Author
+**Shivam Rajiwade**
+- GitHub: [@shivamrajiwade333](https://github.com/shivamrajiwade333)
 
-Please review the \`docs/\` directory for detailed information:
-- \`SYSTEM_DESIGN.md\`
-- \`DATABASE_SCHEMA.md\`
-- \`LLM_DESIGN.md\`
-- \`API.md\`
-- \`TESTING.md\`
+*Built as a showcase of advanced full-stack capabilities, modern UI/UX principles, and scalable system design.*
