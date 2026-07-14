@@ -21,7 +21,9 @@ app.use(helmet());
 
 // CORS config
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
   credentials: true
 }));
 
