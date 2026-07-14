@@ -5,7 +5,8 @@
 ---
 
 ## 📸 Screenshots
-*(Drag and drop your website screenshots here!)*
+<img width="546" height="887" alt="Screenshot 2026-07-14 225210" src="https://github.com/user-attachments/assets/2e7eb129-acaf-4d02-a7b7-b8f12fcde750" />
+
 
 ---
 
